@@ -1,9 +1,11 @@
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
+import theme from "../theme";
+import "@fontsource/cutive-mono";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Component {...pageProps} />
     </ChakraProvider>
   );
