@@ -1,13 +1,17 @@
-import type { NextPage } from "next"
-import Link from "next/link"
-import { DefaultLayout } from "@components/DefaultLayout"
-import { chakra } from "@chakra-ui/system"
-import { SimpleGrid, GridItem, Link as CharkraLink } from "@chakra-ui/layout"
+import type { NextPage } from "next";
+import Link from "next/link";
+import { DefaultLayout } from "@components/DefaultLayout";
+import { chakra } from "@chakra-ui/system";
+import { SimpleGrid, GridItem, Link as CharkraLink } from "@chakra-ui/layout";
 
 const linkConfig = [
   {
-    index: "-00",
+    index: "__1",
     name: "Three Intro Cube",
+  },
+  {
+    index: "__2",
+    name: "THREE Intro Line",
   },
   {
     index: "001",
@@ -29,7 +33,7 @@ const linkConfig = [
     index: "005",
     name: "Smoke",
   },
-]
+];
 
 const Home: NextPage = () => {
   return (
@@ -65,7 +69,7 @@ const Home: NextPage = () => {
         ))}
       </SimpleGrid>
     </DefaultLayout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
