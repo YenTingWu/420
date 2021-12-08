@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
   colors: {
@@ -13,13 +13,27 @@ const theme = extendTheme({
         },
       },
     },
+    Button: {
+      baseStyle: {
+        _focus: {
+          outline: "none",
+          boxShadow: "none",
+        },
+      },
+    },
   },
   styles: {
     global: {
       body: {
         bg: "gray.50",
       },
-      a: {
+      "a, button": {
+        _focus: {
+          outline: "none",
+          boxShadow: "none",
+        },
+      },
+      button: {
         _focus: {
           outline: "none",
           boxShadow: "none",
@@ -31,6 +45,6 @@ const theme = extendTheme({
     heading: "Cutive Mono",
     body: "Cutive Mono",
   },
-})
+});
 
-export default theme
+export default theme;
