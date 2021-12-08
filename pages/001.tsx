@@ -1,8 +1,8 @@
-import { DefaultLayout } from "@components/DefaultLayout";
-import type { NextPage } from "next";
+import { DefaultLayout } from "@components/DefaultLayout"
+import type { NextPage } from "next"
 
-const Joint = () => {
-  return <DefaultLayout>JOint</DefaultLayout>;
-};
+const Paper: NextPage = () => {
+  return <DefaultLayout>Paper</DefaultLayout>
+}
 
-export default Joint;
+export default Paper
