@@ -14,6 +14,10 @@ const linkConfig = [
     name: "THREE Intro Line",
   },
   {
+    index: "__3",
+    name: "Chandelier",
+  },
+  {
     index: "001",
     name: "Paper",
   },
