@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { DefaultLayout } from "@components/DefaultLayout";
+import { SEO } from "@components/SEO";
 import type { NextPage } from "next";
 import * as THREE from "three";
 
@@ -49,10 +50,6 @@ const ThreeIntroCube: NextPage = () => {
       cube.rotation.x += 0.05;
       cube.rotation.y += 0.1;
 
-      // const a = new THREE.Vector3(0, 0, 0.1);
-
-      // cube.position.add(a);
-
       renderer.render(scene, camera);
     }
     animate();
@@ -62,7 +59,12 @@ const ThreeIntroCube: NextPage = () => {
     };
   }, []);
 
-  return <DefaultLayout ref={containerRef}>ThreeIntroCube</DefaultLayout>;
+  return (
+    <>
+      <SEO title="Three Intro Cube" description="Practice 1 from three js" />
+      <DefaultLayout ref={containerRef}>ThreeIntroCube</DefaultLayout>
+    </>
+  );
 };
 
 export default ThreeIntroCube;

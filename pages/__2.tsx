@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { DefaultLayout } from "@components/DefaultLayout";
+import { SEO } from "@components/SEO";
 import type { NextPage } from "next";
 import { Button } from "@chakra-ui/button";
 import { HStack } from "@chakra-ui/layout";
@@ -8,9 +9,9 @@ import * as THREE from "three";
 
 const ThreeIntroLine: NextPage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [reset, setReset] = useState<number>(0);
+  const [reset, setReset] = useState<boolean>(false);
 
-  const handleReset = () => setReset(Math.random());
+  const handleReset = useCallback(() => setReset((prev) => !prev), []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -38,25 +39,16 @@ const ThreeIntroLine: NextPage = () => {
 
     //create a blue LineBasicMaterial
     const material = new THREE.LineBasicMaterial({
-      color: 0x0000ff,
+      color: 0x0fa3ff,
       linewidth: 3,
     });
 
-    const points = createRandomVector3(500);
-    const points2 = createRandomVector3(1000);
-    const points3 = createRandomVector3(5000);
-
-    const geometry = new THREE.BufferGeometry().setFromPoints(points);
-    const geometry2 = new THREE.BufferGeometry().setFromPoints(points2);
-    const geometry3 = new THREE.BufferGeometry().setFromPoints(points3);
-
-    const line = new THREE.Line(geometry, material);
-    const line2 = new THREE.Line(geometry2, material);
-    const line3 = new THREE.Line(geometry3, material);
-
-    scene.add(line);
-    scene.add(line2);
-    scene.add(line3);
+    for (let i = 0; i < 100; i++) {
+      const points = createRandomVector3(500);
+      const geometry = new THREE.BufferGeometry().setFromPoints(points);
+      const line = new THREE.Line(geometry, material);
+      scene.add(line);
+    }
 
     renderer.render(scene, camera);
 
@@ -66,14 +58,17 @@ const ThreeIntroLine: NextPage = () => {
   }, [reset]);
 
   return (
-    <DefaultLayout ref={containerRef}>
-      <HStack spacing="10" mb="5">
-        <chakra.span>ThreeIntroCube</chakra.span>
-        <Button variant="ghost" onClick={handleReset}>
-          Reset
-        </Button>
-      </HStack>
-    </DefaultLayout>
+    <>
+      <SEO title="Three Intro Line" description="Practice 2 from three js" />
+      <DefaultLayout ref={containerRef}>
+        <HStack spacing="10" mb="5">
+          <chakra.span>ThreeIntroCube</chakra.span>
+          <Button variant="ghost" onClick={handleReset}>
+            Reset
+          </Button>
+        </HStack>
+      </DefaultLayout>
+    </>
   );
 };
 
