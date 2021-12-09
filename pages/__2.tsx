@@ -60,7 +60,7 @@ const ThreeIntroLine: NextPage = () => {
   return (
     <>
       <SEO title="Three Intro Line" description="Practice 2 from three js" />
-      <DefaultLayout ref={containerRef}>
+      <DefaultLayout backward ref={containerRef}>
         <HStack spacing="10" mb="5">
           <chakra.span>ThreeIntroCube</chakra.span>
           <Button variant="ghost" onClick={handleReset}>

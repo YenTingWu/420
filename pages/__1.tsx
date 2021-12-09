@@ -62,7 +62,9 @@ const ThreeIntroCube: NextPage = () => {
   return (
     <>
       <SEO title="Three Intro Cube" description="Practice 1 from three js" />
-      <DefaultLayout ref={containerRef}>ThreeIntroCube</DefaultLayout>
+      <DefaultLayout backward ref={containerRef}>
+        ThreeIntroCube
+      </DefaultLayout>
     </>
   );
 };
