@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
+import { SEO } from "@components/SEO";
 import { DefaultLayout } from "@components/DefaultLayout";
 import { chakra } from "@chakra-ui/system";
 import { SimpleGrid, GridItem, Link as CharkraLink } from "@chakra-ui/layout";
@@ -52,6 +53,7 @@ const Home: NextPage = () => {
         alignItems="center"
         p="5"
       >
+        <SEO title="Home" />
         {linkConfig.map(({ name, index }) => (
           <GridItem
             justifyContent="center"
