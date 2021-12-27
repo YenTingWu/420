@@ -22,22 +22,6 @@ const linkConfig = [
     index: "001",
     name: "Paper",
   },
-  {
-    index: "002",
-    name: "Roll",
-  },
-  {
-    index: "003",
-    name: "Grass",
-  },
-  {
-    index: "004",
-    name: "Fire",
-  },
-  {
-    index: "005",
-    name: "Smoke",
-  },
 ];
 
 const Home: NextPage = () => {
