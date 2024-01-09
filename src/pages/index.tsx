@@ -5,7 +5,7 @@ import Link from "next/link";
 import { SEO } from "@components/SEO";
 import { DefaultLayout } from "@components/DefaultLayout";
 import { chakra } from "@chakra-ui/system";
-import { SimpleGrid, GridItem } from "@chakra-ui/layout";
+import { SimpleGrid, GridItem, Link as ChakraLink } from "@chakra-ui/layout";
 
 const linkConfig = [
   {
@@ -22,41 +22,40 @@ const linkConfig = [
   },
   {
     index: "001",
-    name: "Paper",
+    name: "Bubble Circle",
   },
 ];
 
 const Home: NextPage = () => {
   return (
     <DefaultLayout>
+      <SEO title="Home" />
+
       <SimpleGrid
         columns={5}
-        maxW="650px"
+        maxW="800px"
         w="full"
-        // h="500px"
         bgColor="orange.50"
         justifyContent="center"
         alignItems="center"
         p="5"
+        templateColumns="repeat(3, minmax(0, 1fr))"
       >
-        <SEO title="Home" />
         {linkConfig.map(({ name, index }) => (
           <GridItem
             justifyContent="center"
             alignItems="center"
             key={`${name}_${index}`}
-            h="45px"
+            py="2"
           >
-            <Link href={`/${index}`} passHref={true}>
-              {/* <CharkraLink noOfLines={1}> */}
+            <ChakraLink display="flex" as={Link} href={`/${index}`}>
               <chakra.span fontWeight="bold" color="gray.400">
                 {index}
-              </chakra.span>{" "}
-              <chakra.span fontWeight="bold" color="black">
+              </chakra.span>
+              <chakra.span ml="3" fontWeight="bold" color="black">
                 {name}
               </chakra.span>
-              {/* </CharkraLink> */}
-            </Link>
+            </ChakraLink>
           </GridItem>
         ))}
       </SimpleGrid>

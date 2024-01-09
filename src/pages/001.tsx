@@ -1,8 +1,8 @@
-import { DefaultLayout } from "@components/DefaultLayout"
-import type { NextPage } from "next"
+import { DefaultLayout } from "@components/DefaultLayout";
+import type { NextPage } from "next";
 
 const Paper: NextPage = () => {
-  return <DefaultLayout>Paper</DefaultLayout>
-}
+  return <DefaultLayout>Bubble Circle</DefaultLayout>;
+};
 
-export default Paper
+export default Paper;
