@@ -1,9 +1,11 @@
+"use client";
+
 import type { NextPage } from "next";
 import Link from "next/link";
 import { SEO } from "@components/SEO";
 import { DefaultLayout } from "@components/DefaultLayout";
 import { chakra } from "@chakra-ui/system";
-import { SimpleGrid, GridItem, Link as CharkraLink } from "@chakra-ui/layout";
+import { SimpleGrid, GridItem } from "@chakra-ui/layout";
 
 const linkConfig = [
   {
@@ -46,14 +48,14 @@ const Home: NextPage = () => {
             h="45px"
           >
             <Link href={`/${index}`} passHref={true}>
-              <CharkraLink noOfLines={1}>
-                <chakra.span fontWeight="bold" color="gray.400">
-                  {index}
-                </chakra.span>{" "}
-                <chakra.span fontWeight="bold" color="black">
-                  {name}
-                </chakra.span>
-              </CharkraLink>
+              {/* <CharkraLink noOfLines={1}> */}
+              <chakra.span fontWeight="bold" color="gray.400">
+                {index}
+              </chakra.span>{" "}
+              <chakra.span fontWeight="bold" color="black">
+                {name}
+              </chakra.span>
+              {/* </CharkraLink> */}
             </Link>
           </GridItem>
         ))}

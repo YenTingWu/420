@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef } from "react";
 import type { NextPage } from "next";
 import { DefaultLayout } from "@components/DefaultLayout";
